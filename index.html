@@ -6,16 +6,19 @@
   <link rel="icon" href="img/favicon.jpg">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/lib/jquery.pagepiling.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
   <script src="js/lib/jquery-3.6.0.min.js"></script>
   <script src="js/lib/t.min.js"></script>
   <script src="js/util/menu-ber-change.js"></script>
+  <script src="js/lib/jquery.pagepiling.min.js"></script>
+  <script src="js/util/page-piling.js"></script>
 </head>
 <body>
 <header>
-<!--  <div class="logo">-->
-<!--    <img src="img/logo.png" alt="logo"/>-->
-<!--  </div>-->
+<!--    <div class="logo">-->
+<!--      <img src="img/logo.png" alt="logo"/>-->
+<!--    </div>-->
   <button type="button" class="btn js-btn">
     <span class="btn-line"></span>
   </button>
@@ -25,9 +28,8 @@
     </ul>
   </nav>
 </header>
-<div class="cover"></div>
-<article>
-  <section>
+<div id="pagepiling">
+  <section class="section" id="section1">
     <div class="top top-table">
       <div class="top-table-cell">
         <div class="top-title__outer">
@@ -35,9 +37,10 @@
           <div class="top-sub-text__outer">
             <p class="typing-text">
               <span class="typing-text-box">
-                Hello Thanks for coming to my page<br/>
-                My name is shogo<br/>
-                This is my home page .
+                Welcome to my homepage!!<br/>
+                Profile<br/>
+                Name : shogo<br/>
+                Age  : 21
               </span>
             </p>
           </div>
@@ -45,7 +48,10 @@
       </div>
     </div>
   </section>
-</article>
+  <section class="section pp-scrollable" id="section2">
+  </section>
+</div>
+<div class="cover"></div>
 <!-- Loading -->
 <div id="loading-wrapper">
   <div class="configure-border-1">
