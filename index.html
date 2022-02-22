@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/loading.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/t.min.js"></script>
-  <script src="js/menu-ber-change.js"></script>
+  <script src="js/lib/jquery-3.6.0.min.js"></script>
+  <script src="js/lib/t.min.js"></script>
+  <script src="js/util/menu-ber-change.js"></script>
 </head>
 <body>
 <header>
+<!--  <div class="logo">-->
+<!--    <img src="img/logo.png" alt="logo"/>-->
+<!--  </div>-->
   <button type="button" class="btn js-btn">
     <span class="btn-line"></span>
   </button>
@@ -22,16 +25,24 @@
     </ul>
   </nav>
 </header>
-<div class="screen-cover"></div>
+<div class="cover"></div>
 <article>
   <section>
-    <div class="top">
-      <h1>shogo web</h1>
-      <p class="typing">
-        Hello Thanks for coming to my page<br/>
-        My name is shogo<br/>
-        This is my home page .
-      </p>
+    <div class="top top-table">
+      <div class="top-table-cell">
+        <div class="top-title__outer">
+          <h1>shogo web</h1>
+          <div class="top-sub-text__outer">
+            <p class="typing-text">
+              <span class="typing-text-box">
+                Hello Thanks for coming to my page<br/>
+                My name is shogo<br/>
+                This is my home page .
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </article>
@@ -44,7 +55,7 @@
     <div class="configure-core"></div>
   </div>
 </div>
-<script src="js/typing.js"></script>
-<script src="js/loading-fin.js"></script>
+<script src="js/util/typing.js"></script>
+<script src="js/util/loading-fin.js"></script>
 </body>
 </html>

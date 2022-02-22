@@ -113,8 +113,16 @@ p {
   margin: 0;
 }
 
-figure {
-  margin: 0;
+/**************** 以下、ロゴスタイリング ****************/
+.logo {
+  z-index: 9999;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  > img {
+    max-width: 8rem;
+    width: 100%;
+  }
 }
 
 /**************** 以下、ハンバーガーボタンのスタイリング ****************/
@@ -166,20 +174,20 @@ figure {
   transform: translateX(6px);
 }
 /***** メニューオープン時 *****/
-.btn-line.open {
+.btn-line.js-open {
   /* 真ん中の線を透明に */
   background-color: transparent;
 }
-.btn-line.open::before , .btn-line.open::after {
+.btn-line.js-open::before , .btn-line.js-open::after {
   content: "";
   background-color: #333;
   transition: .2s;
 }
-.btn-line.open::before {
+.btn-line.js-open::before {
   /* 上の線を傾ける */
   transform: rotate(25deg);
 }
-.btn-line.open::after {
+.btn-line.js-open::after {
   /* 上の線を傾ける */
   transform: rotate(-25deg);
 }
@@ -217,27 +225,13 @@ figure {
 }
 
 /***** メニューオープン時位置0にして画面内に *****/
-.menu.open {
+.menu.js-open {
   position: absolute;
   left: 0;
 }
 
-.top {
-  z-index: 10;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  > h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 16rem;
-  }
-}
-
-.screen-cover {
+/***** メニューオープン時グレーのカバー表示 *****/
+.cover {
   visibility:hidden;
   width: 100%;
   height: 100%;
@@ -246,7 +240,7 @@ figure {
   transition: 0.5s all linear;
 }
 
-.screen-cover.filter {
+.cover.js-filter {
   visibility:visible;
   position: fixed;
   z-index: 9996;
@@ -258,13 +252,55 @@ figure {
   transition: 0.5s all linear;
 }
 
-.typing {
+.top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.top-table {
+  display: table;
+}
+
+.top-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+.top-title__outer {
+  z-index: 10;
+  position: relative;
+  margin: 0 auto;
+  max-width: 70rem;
+  width: 100%;
+  > h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16rem;
+  }
+}
+
+.top-sub-text__outer {
+  z-index: 9;
+  position: absolute;
+  bottom: -50%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.typing-text {
   opacity: 0;
-  padding: 1rem;
-  text-align: left;
   font-size: 2rem;
 }
 
-.show {
+.typing-text.js-show {
   opacity: 1;
+}
+
+.typing-text-box {
+  display: block;
+  height: 100px;
 }
