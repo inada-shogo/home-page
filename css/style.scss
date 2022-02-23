@@ -320,18 +320,6 @@ p {
   }
 }
 
-.about-text {
-  opacity: 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  @include media(s) {
-    font-size: 1.6rem;
-  }
-  .typing-text-box {
-    display: block;
-  }
-}
-
 .desc-title {
   padding: 3rem 0;
   font-weight: 700;
@@ -345,16 +333,12 @@ p {
 .profile-text.js-show {
   opacity: 1;
 }
-.about-text.js-shows {
-  opacity: 1;
-}
 
 .page1-right-bottom {
   position: fixed;
   bottom: 2rem;
-  right: 0;
-  width: 100%;
   height: 3rem;
+  transform: translateX(-100%);
   @include media(s) {
     width: 100%;
   }
@@ -380,12 +364,10 @@ p {
 }
 
 .instagram {
-  max-width: 150px;
-  width: 100%;
-  margin: 0 auto;
+  text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
   @include media(s) {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }
