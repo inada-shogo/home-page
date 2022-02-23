@@ -255,12 +255,6 @@ p {
   display: table-cell;
   vertical-align: top;
 }
-@media screen and (max-width: 600px) {
-  .page1-right-table-cell {
-    display: table-cell;
-    vertical-align: middle;
-  }
-}
 
 .page1-right-desc {
   margin: 10rem 0;
@@ -280,6 +274,11 @@ p {
   font-size: 16rem;
   line-height: 1;
   white-space: pre;
+}
+@media screen and (max-width: 414px) {
+  .page1-right-title > h1 {
+    font-size: 10rem;
+  }
 }
 
 .page1-right-sub-title {

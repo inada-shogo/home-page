@@ -262,11 +262,6 @@ p {
 .page1-right-table-cell {
   display: table-cell;
   vertical-align: top;
-  @include media(m-s) {
-    display: table-cell;
-    vertical-align: middle;
-
-  }
 }
 
 .page1-right-desc {
@@ -286,6 +281,9 @@ p {
     font-size: 16rem;
     line-height: 1;
     white-space: pre;
+    @include media(s) {
+      font-size: 10rem;
+    }
   }
 }
 
