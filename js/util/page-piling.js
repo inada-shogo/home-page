@@ -13,4 +13,10 @@ $(function() {
       'tooltips': ['page1', 'page2']
     },
   });
+})
+
+$(function () {
+  $('.page1-right-bottom').on('click', function () {
+    $.fn.pagepiling.moveSectionDown();
+  })
 });
