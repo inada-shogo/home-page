@@ -295,6 +295,9 @@ p {
       font-size: 8rem;
     }
   }
+  @include media(s) {
+    margin-bottom: 5rem;
+  }
 }
 .page1-right-sub-title-box {
   display: flex;
@@ -364,4 +367,7 @@ p {
   margin: 0 auto;
   font-size: 2.5rem;
   font-weight: bold;
+  @include media(s) {
+    font-size: 1.6rem;
+  }
 }
