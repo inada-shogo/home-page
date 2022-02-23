@@ -236,6 +236,11 @@ p {
   height: 100vh;
   object-fit: cover;
 }
+@media screen and (max-width: 414px) {
+  .top-image-outer {
+    display: none;
+  }
+}
 
 .top {
   display: flex;
