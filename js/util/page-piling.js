@@ -1,6 +1,7 @@
 $(function() {
   $('#pagepiling').pagepiling({
     menu: '#nav',
+    direction: 'horizontal',
     sectionSelector: '.section',
     sectionsColor: ['#fff', '#fff'],
     anchors: ['page1', 'page2'],

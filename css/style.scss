@@ -33,8 +33,8 @@ html {
 
 body {
   font-size: 1.6rem;
-  //color: $gColor;
-  font-family: 'Montserrat Subrayada', sans-serif;
+  font-family: "Objective", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   background-color: #fff;
@@ -105,26 +105,14 @@ p {
   margin: 0;
 }
 
-/**************** 以下、ロゴスタイリング ****************/
-.logo {
-  z-index: 9999;
-  position: fixed;
-  top: 2rem;
-  left: 2rem;
-  > img {
-    max-width: 8rem;
-    width: 100%;
-  }
-}
-
 /**************** 以下、ハンバーガーボタンのスタイリング ****************/
 .btn {
   /* 最前面に */
   z-index: 9998;
   /* ボタンの配置位置  */
   position: fixed;
-  top: 50%;
-  left: 40px;
+  top: 40px;
+  right: 40px;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -139,8 +127,8 @@ p {
   /* バーガー線の位置基準として設定 */
   position: relative;
   /* 線の長さと高さ */
-  width: 3px;
-  height: 100%;
+  width: 100%;
+  height: 3px;
   /* バーガー線の色 */
   background-color: transparent;
   transition: .2s;
@@ -158,12 +146,12 @@ p {
 .btn-line::before {
   /* 上の線の位置 */
   border-radius: 4rem;
-  transform: translateX(-6px);
+  transform: translateY(-6px);
 }
 .btn-line::after {
   /* 下の線の位置 */
   border-radius: 4rem;
-  transform: translateX(6px);
+  transform: translateY(6px);
 }
 /***** メニューオープン時 *****/
 .btn-line.js-open {
@@ -172,15 +160,17 @@ p {
 }
 .btn-line.js-open::before , .btn-line.js-open::after {
   content: "";
-  background-color: #333;
+  background-color: #fff;
   transition: .2s;
 }
 .btn-line.js-open::before {
   /* 上の線を傾ける */
+  border-radius: 4rem;
   transform: rotate(25deg);
 }
 .btn-line.js-open::after {
   /* 上の線を傾ける */
+  border-radius: 4rem;
   transform: rotate(-25deg);
 }
 /**************** ここまで、ハンバーガーボタンのスタイリング ****************/
@@ -189,19 +179,19 @@ p {
   z-index: 9997;
   /* メニューを縦に */
   display: flex;
-  flex-direction: column;
   align-items: center;
   position: fixed;
   /* メニューの位置マイナス指定で画面外に */
   top: 0;
   left: -70%;
   width: 30%;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
   color: $gColor;
   transition: .5s;
   @include media(m) {
     width: 70%;
+    height: 100%;
   }
 }
 .menu-list {
@@ -210,7 +200,7 @@ p {
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  width: 80%;
+  width: 100%;
   height: 100%;
   font-size: 3rem;
   cursor: pointer;
@@ -224,6 +214,7 @@ p {
 
 /***** メニューオープン時グレーのカバー表示 *****/
 .cover {
+  z-index: 9996;
   visibility:hidden;
   width: 100%;
   height: 100%;
@@ -244,55 +235,72 @@ p {
   transition: 0.5s all linear;
 }
 
-.top {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.top-table {
-  display: table;
-}
-
-.top-table-cell {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-}
-.top-title__outer {
-  z-index: 10;
-  position: relative;
-  margin: 0 auto;
-  max-width: 70rem;
-  width: 100%;
-  > h1 {
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16rem;
+/**************** 以下image ****************/
+.top-image-outer {
+  width: 35%;
+  > img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
 }
 
-.top-sub-text__outer {
-  z-index: 9;
-  position: absolute;
-  bottom: -95%;
-  left: 4%;
+.top {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
+  justify-content: space-between;
 }
-.typing-text {
+
+.page1-right {
+  display: table;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 70rem;
+  width: 100%;
+}
+
+.page1-right-table-cell {
+  display: table-cell;
+  vertical-align: top;
+  @include media(m-s) {
+    display: table-cell;
+    vertical-align: middle;
+
+  }
+}
+
+.page1-right-desc {
+  margin: 10rem 0;
+  padding-left: 1rem;
+  > p {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+.page1-right-title {
+  margin-bottom: 10rem;
+  > h1 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 16rem;
+    line-height: 1;
+    white-space: pre;
+  }
+}
+
+.page1-right-sub-title {
+  margin: 0 2rem;
+}
+.profile-text {
   opacity: 0;
   font-size: 2rem;
+  > span {
+    display: block;
+    height: 200px;
+  }
 }
 
-.typing-text.js-show {
+.profile-text.js-show {
   opacity: 1;
-}
-
-.typing-text-box {
-  display: block;
-  height: 200px;
 }
